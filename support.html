@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support – Shree Ji Online Book</title>
+  <meta name="description" content="Shree Ji Online Book support page. Get help with order tracking, returns, payment issues and book availability."/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Support – Shree Ji Online Book"/>
+  <meta property="og:description" content="Get help with your cricket book orders at Shree Ji Online Book."/>
+  <meta property="og:type" content="website"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #1a1a1a; }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      justify-content: space-between;
+    }
+
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-icon { width: 34px; height: 34px; background: #1a7a3c; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .logo-text { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+    nav a { text-decoration: none; color: #666; font-size: 14px; margin-left: 20px; }
+    nav a:hover { color: #1a1a1a; }
+
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 50px 20px 40px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+    .hero p { font-size: 15px; color: #666; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 50px 20px 60px; }
+
+    /* Contact Cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); transform: translateY(-3px); }
+
+    .contact-card i { font-size: 36px; }
+    .contact-card .c-wa i  { color: #25D366; }
+    .contact-card .c-tg i  { color: #0088cc; }
+    .contact-card h3 { font-size: 16px; font-weight: 700; }
+    .contact-card p  { font-size: 13px; color: #777; }
+    .contact-card .tag {
+      font-size: 12px; font-weight: 600;
+      padding: 5px 14px; border-radius: 20px;
+      border: 1px solid #e8e8e8; color: #555;
+      margin-top: 4px;
+    }
+
+    /* Topics */
+    .topics-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .topic-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: box-shadow 0.2s;
+    }
+
+    .topic-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    .topic-icon {
+      width: 40px; height: 40px;
+      background: #e8f5ee;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+
+    .topic-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .topic-card p  { font-size: 12px; color: #777; line-height: 1.5; }
+
+    /* Hours */
+    .hours-box {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 40px;
+    }
+
+    .hours-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row span:first-child { color: #555; }
+    .hours-row span:last-child { font-weight: 600; color: #1a7a3c; }
+
+    /* CTA */
+    .cta-box {
+      background: #e8f5ee;
+      border-radius: 14px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .cta-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .cta-box p  { font-size: 14px; color: #555; margin-bottom: 20px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-green {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #1a7a3c; color: #fff; text-decoration: none;
+      padding: 12px 22px; border-radius: 9px; font-size: 14px; font-weight: 600;
+    }
+    .btn-telegram {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0088cc; color: #fff; text-decoration: none;
+      padding: 12px 22px; border-radius: 9px; font-size: 14px; font-weight: 600;
+    }
+
+    footer {
+      background: #111; color: #aaa;
+      text-align: center; padding: 24px 20px; font-size: 13px;
+    }
+    footer a { color: #aaa; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .cta-btns { flex-direction: column; align-items: stretch; }
+      .btn-green, .btn-telegram { justify-content: center; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">
+      <div class="logo-icon">🏏</div>
+      <span class="logo-text">Shree Ji Online Book</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Support</h1>
+    <p>We are here for any question or problem</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Contact Options -->
+    <div class="contact-grid">
+      <a class="contact-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20help." target="_blank" rel="noopener noreferrer">
+        <div class="c-wa"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Message us directly — fastest response</p>
+        <span class="tag">+91 98765 43210</span>
+      </a>
+
+      <a class="contact-card" href="https://t.me/TELEGRAM_USERNAME_HERE" target="_blank" rel="noopener noreferrer">
+        <div class="c-tg"><i class="fa-brands fa-telegram"></i></div>
+        <h3>Telegram</h3>
+        <p>We are also available on Telegram</p>
+        <span class="tag">@TELEGRAM_USERNAME_HERE</span>
+      </a>
+    </div>
+
+    <!-- Support Topics -->
+    <div class="topics-title">How Can We Help You?</div>
+    <div class="topic-grid">
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20place%20a%20new%20order." target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">📦</div>
+        <div>
+          <h4>New Order</h4>
+          <p>I want to order a book</p>
+        </div>
+      </a>
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20track%20my%20order." target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">🚚</div>
+        <div>
+          <h4>Track My Order</h4>
+          <p>I want to know my delivery status</p>
+        </div>
+      </a>
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20return%20a%20book." target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">🔄</div>
+        <div>
+          <h4>Return / Exchange</h4>
+          <p>I want to return or exchange a book</p>
+        </div>
+      </a>
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20have%20a%20payment%20issue." target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">💳</div>
+        <div>
+          <h4>Payment Issue</h4>
+          <p>I have a problem related to payment</p>
+        </div>
+      </a>
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20is%20a%20book%20available%3F" target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">📚</div>
+        <div>
+          <h4>Book Availability</h4>
+          <p>Is a specific book available?</p>
+        </div>
+      </a>
+
+      <a class="topic-card" href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20place%20a%20bulk%20order." target="_blank" rel="noopener noreferrer">
+        <div class="topic-icon">📋</div>
+        <div>
+          <h4>Bulk Order</h4>
+          <p>I want to order in large quantity</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Hours -->
+    <div class="hours-box">
+      <h3>⏰ Support Hours</h3>
+      <div class="hours-row">
+        <span>Monday – Saturday</span>
+        <span>9:00 AM – 8:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span>Sunday</span>
+        <span>10:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span>Response Time</span>
+        <span>Usually within 1 hour</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>Contact Us Now</h3>
+      <p>Any question — we reply quickly</p>
+      <div class="cta-btns">
+        <a class="btn-green" href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20help." target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <a class="btn-telegram" href="https://t.me/TELEGRAM_USERNAME_HERE" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-telegram"></i> Telegram Us
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div style="margin-bottom:10px;">🏏 Shree Ji Online Book</div>
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <div style="margin-top:12px;color:#555;">© 2025 Shree Ji Online Book. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
